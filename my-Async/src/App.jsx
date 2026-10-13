@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import axios from "axios";
 
@@ -5,7 +6,8 @@ function App() {
   const [result, setResult] = useState("");
 
   const API = "https://jsonplaceholder.typicode.com/posts";
-   // GET
+
+  // GET
   async function getData() {
     const response = await axios.get(`${API}/1`);
     setResult(JSON.stringify(response.data));
@@ -48,8 +50,7 @@ function App() {
       <button onClick={putData}>PUT</button>{" "}
       <button onClick={deleteData}>DELETE</button>
 
-
-      <h2>{data}</h2>
+      <h2>{result}</h2>
     </div>
   );
 }
